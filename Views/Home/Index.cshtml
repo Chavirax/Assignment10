@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Bowler>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+</div>
+<div>
+    @foreach (var x in Model)
+    {
+        <p>@x.BowlerFirstName</p>
+    }
+</div>
