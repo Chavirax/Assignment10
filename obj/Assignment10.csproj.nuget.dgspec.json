@@ -14,7 +14,7 @@
         "outputPath": "/Users/salvadormorales/Projects/Assignment10/Assignment10/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/salvadormorales/.nuget/NuGet/NuGet.Config"
+          "/Users/salvadormorales/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

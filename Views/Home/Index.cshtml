@@ -1,15 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IEnumerable<Bowler>
+@model Assignment10.Models.ViewModels.IndexViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
     
-</div>
+
 <div>
-    @foreach (var x in Model)
+    @foreach (var x in Model.Bowlers)
     {
-        <p>@x.BowlerFirstName</p>
+        <p>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName</p>
+        <p>@x.BowlerAddress @x.BowlerCity, @x.BowlerState, @x.BowlerZip</p>
+        <p>@x.BowlerPhoneNumber</p>
+        <br />
     }
+</div>
+
+<!--This is where there thee page numbers should be included-->
+<div page-info="@Model.PageNumberingInfo"
+     page-url-teamtype ="@Model.TeamCategory">
 </div>

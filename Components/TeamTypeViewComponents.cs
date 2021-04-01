@@ -13,6 +13,8 @@ namespace Assignment10.Components
         {
             context = ctx;
         }
+
+        //this little function grabs the team names
         public IViewComponentResult Invoke()
         {
             return View(context.Teams
