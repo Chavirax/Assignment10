@@ -30,6 +30,13 @@ namespace Assignment10.Infrastructure
         [HtmlAttributeNotBound]
         [ViewContext]
         public ViewContext ViewContext { get; set; }
+        
+
+        //these are for the page numbering at the bottom of the index page
+        public bool PageClassesEnabled { get; set; } = false;
+        public string PageClass { get; set; }
+        public string PageClassNormal { get; set; }
+        public string PageClassSelected { get; set; }
 
         //process method
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -46,6 +53,16 @@ namespace Assignment10.Infrastructure
                 KeyValuePairs["pageNum"] = i;
 
                 individualTag.Attributes["href"] = urlHelp.Action("Index", KeyValuePairs);
+
+                //for the page numbering purpose
+
+                if (PageClassesEnabled)
+                {
+                    individualTag.AddCssClass(PageClass);
+                    individualTag.AddCssClass(i == PageInfo.CurrentPage ? PageClassSelected : PageClassNormal);
+
+                }
+
                 individualTag.InnerHtml.AppendHtml(i.ToString());
 
                 finishedTag.InnerHtml.AppendHtml(individualTag);

@@ -1,10 +1,14 @@
 ﻿@model IEnumerable<Team>
-<a asp-action="Index" asp-controller="Home" asp-route-teamtypeid="">Home</a>
+<a class="btn btn-block btn-outline-secondary" 
+   asp-action="Index" asp-controller="Home" asp-route-teamtypeid="">Home</a>
 <br />
+
+<!--Bewow is where the filtering navigation is located-->
 @foreach (var x in Model)
 {
-    <a asp-action="Index" asp-controller="Home" asp-route-teamtypeid="@x.TeamId"
+    <a class="btn btn-block @(x.TeamName == ViewBag.SelectedTeam? "btn-primary" : "btn-outline-secondary")"
+       asp-action="Index" asp-controller="Home" asp-route-teamtypeid="@x.TeamId"
        asp-route-teamtype="@x.TeamName">
     @x.TeamName</a>
-    <br />
+    
 }

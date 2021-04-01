@@ -17,6 +17,8 @@ namespace Assignment10.Components
         //this little function grabs the team names
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedTeam = RouteData?.Values["teamtype"];
+
             return View(context.Teams
                 .Distinct()
                 .OrderBy(x => x));

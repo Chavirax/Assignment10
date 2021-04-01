@@ -4,11 +4,12 @@
 @model Assignment10.Models.ViewModels.IndexViewModel
 
     
-
+<h2 class="text-secondary">@Model.TeamCategory</h2>
+<br />
 <div>
     @foreach (var x in Model.Bowlers)
     {
-        <p>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName</p>
+        <h5>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName</h5>
         <p>@x.BowlerAddress @x.BowlerCity, @x.BowlerState, @x.BowlerZip</p>
         <p>@x.BowlerPhoneNumber</p>
         <br />
@@ -17,5 +18,6 @@
 
 <!--This is where there thee page numbers should be included-->
 <div page-info="@Model.PageNumberingInfo"
-     page-url-teamtype ="@Model.TeamCategory">
-</div>
+     page-url-teamtype ="@Model.TeamCategory"
+     page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary"
+     class="btn-group pull-right m-1"></div>

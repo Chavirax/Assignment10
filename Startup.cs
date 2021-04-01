@@ -59,7 +59,7 @@ namespace Assignment10
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("teamtypeid",
-                    "TeamType/{teamtypeid}/{mealtype}",
+                    "TeamType/{teamtypeid}/{teamtype}",
                     new {Controller = "Home", action = "Index"}
                     );
 
